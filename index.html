@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="grid-container">
@@ -15,6 +16,10 @@
                 <img class="image2" src="images/odin-lined.png" alt="odin logo">
                 <h1 class="odin-text">ODIN</h1>
             </div>
+            <div class="credit-container">
+                <p class="credit">Photo by Halie West on Unsplash</p>
+            </div>
+            
         </div>
         <div class="item2">
             <h1>This is not a real online service! You know you need something like this in your life to 
@@ -30,37 +35,37 @@
             </div>
             <h1>Let's do this!</h1>
             <div class="form-conatiner">
-                <form action="#" method="post">
+                <form id="myForm"action="#" method="post" onsubmit="return checkPasswords(this)">
                     <div class="form-row">
                         <div class="input-data">
                             <label for="first_name">First Name</label><br>
-                            <input type="text" name="first_name" id="first_name">
+                            <input type="text" name="first_name" id="first_name" pattern="[a-zA-Z]*">
                         </div>
                         <div class="input-data">
                             <label for="last_name">Last Name</label><br>
-                            <input type="text" name="last_name" id="last_name">
+                            <input type="text" name="last_name" id="last_name" pattern="[a-zA-Z]*">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-data">
                             <label for="email">Email</label><br>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                         <div class="input-data">
                             <label for="phone_num">Phone Number</label><br>
-                            <input type="text" name="phone_num" id="phone_num">
+                            <input type="tel" name="phone_num" id="phone_num" pattern="[0-9]{3} [0-9]{3} [0-9]{4}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-data">
                             <label for="password">Password</label><br>
-                            <input type="password" name="password" id="password">
+                            <input type="password" name="password" id="password" class="error" required>
                         </div>
                         <div class="input-data">
                             <label for="confirm_password">Confirm Password</label><br>
-                            <input type="password" name="confirm_password" id="confirm_password">
+                            <input type="password" name="confirm_password" id="confirm_password" class="error" required>
                         </div>
                     </div>
                     
@@ -69,7 +74,7 @@
             
         </div>
         <div class="item4">
-            <button type="submit" class="submit">Create Account</button>
+            <button type="submit" form="myForm" class="submit">Create Account</button>
             <h2>Already have an account? <a href="#">Log in</a></h2>
         </div>
     </div>

@@ -80,6 +80,17 @@
     width: auto;
 }
 
+.credit-container{
+    position: absolute;
+    bottom: 1vh;
+    text-align: center;
+}
+
+.credit{
+    width: 33vw;
+    color: white;
+}
+
 .form-row{
     display: flex;
     font-size: 18px;
@@ -91,7 +102,7 @@
     
 }
 
-input[type=text], input[type=password], input[type=email]{
+input[type=text], input[type=password], input[type=email], input[type=tel]{
     width: 20vw;
     height: 3vh;
     border-radius: 4px;
@@ -101,12 +112,17 @@ input[type=text], input[type=password], input[type=email]{
     padding-left: 10px;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus{
     border-color: blue;
     outline: none;
     box-shadow: 0 0 5px blue;
 }
 
+input[type=email]:invalid, input[type=text]:invalid, input[type=tel]:invalid{
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
 .item3 h1{
     padding-top: 2vh;
 }
@@ -136,4 +152,10 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
 
 .item4 a:visited{
     color: #596D48;
+}
+
+.error:invalid{
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 5px red;
 }
